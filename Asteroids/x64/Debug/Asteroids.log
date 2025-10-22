@@ -1,0 +1,13 @@
+﻿  MainMenu.cpp
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(71,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(71,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(72,47): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(72,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(73,53): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(73,39): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(74,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\MainMenu.cpp(74,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Player.cpp
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\Player.cpp(24,67): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
+  Asteroids.vcxproj -> C:\Users\usuario\source\repos\Asteroids_Caparroz\x64\Debug\Asteroids.exe
