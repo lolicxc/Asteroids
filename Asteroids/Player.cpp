@@ -1,6 +1,6 @@
-#include "raylib.h"
 #include "Player.h"
 #include "raymath.h"
+#include "Utils.h"
 
 Player player;
 
@@ -10,7 +10,7 @@ void InitPlayer()
     player.position = { 400, 300 };
     player.velocity = { 0, 0 };
     player.acceleration = { 0, 0 };
-    player.speed = 200.0f;   // valor base
+    player.speed = 100.0f;   // valor base
     player.rotation = 0.0f;
     player.texture = LoadTexture("../res/nave.png");
 }
@@ -27,7 +27,7 @@ void UpdatePlayer()
     if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
     {
         Vector2 dirNormalizada = Vector2Normalize(vectorDireccion);
-        player.acceleration = Vector2Scale(dirNormalizada, 300.0f);
+        player.acceleration = Vector2Scale(dirNormalizada, 200.0f);
     }
     else
     {
@@ -38,10 +38,16 @@ void UpdatePlayer()
    
     player.velocity.x += player.acceleration.x * GetFrameTime();
     player.velocity.y += player.acceleration.y * GetFrameTime();
-
-    /*nuevaPosNave = posNave + aceleracionNave * tiempoEntreFrames*/
     player.position.x += player.velocity.x * GetFrameTime();
     player.position.y += player.velocity.y * GetFrameTime();
+
+    float halfWidth = player.texture.width / 2.0f;
+    float halfHeight = player.texture.height / 2.0f;
+
+    if (player.position.x < -halfWidth) player.position.x = screenWidth + halfWidth;
+    if (player.position.x > screenWidth + halfWidth) player.position.x = -halfWidth;
+    if (player.position.y < -halfHeight) player.position.y = screenHeight + halfHeight;
+    if (player.position.y > screenHeight + halfHeight) player.position.y = -halfHeight;
 }
 
 void DrawPlayer()
