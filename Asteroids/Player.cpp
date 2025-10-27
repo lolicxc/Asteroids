@@ -59,3 +59,8 @@ void DrawPlayer()
     DrawTexturePro(player.texture, source, dest, origin, player.rotation, WHITE);
 }
 
+void DrawScore()
+{
+    DrawTextEx(font, TextFormat("Puntos: %i", player.score), { 220, 660 }, 34, 2, ORANGE);
+}
+

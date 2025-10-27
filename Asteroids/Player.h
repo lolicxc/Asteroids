@@ -10,11 +10,13 @@ struct Player
     float rotation;
     float speed;
     Texture2D texture;
+    int score;
 
 };
 
 void InitPlayer();
 void UpdatePlayer();
 void DrawPlayer();
+void DrawScore();
 
 

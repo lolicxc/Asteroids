@@ -15,9 +15,11 @@ void RunGame()
 
 	bool gameplayInitialized = false;
 	bool howScreenInitialized = false;  
+	bool isPaused = false;
 
 	while (!WindowShouldClose())
 	{
+		UpdateTimer();
 		BeginDrawing();
 		ClearBackground(BLACK);
 
