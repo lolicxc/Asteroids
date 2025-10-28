@@ -2,6 +2,8 @@
 #include "Utils.h"
 #include "Screens.h"
 #include "raylib.h"
+#include "Audio.h"
+#include "GameOverScreen.h"
 
 Texture2D background;
 Texture2D buttonPlay;
@@ -19,6 +21,8 @@ bool mousePressedLastFrame = false;
 
 void InitMainMenu()
 {
+ 
+    //imagenes
     background = LoadTexture("../res/background.png");
     buttonPlay = LoadTexture("../res/buttonPlay.png");
     buttonHowTo = LoadTexture("../res/buttonHow.png");
@@ -37,19 +41,32 @@ void InitMainMenu()
 
 void UpdateMainMenu()
 {
+   
     mousePoint = GetMousePosition();
     bool mousePressed = IsMouseButtonDown(MOUSE_LEFT_BUTTON);
 
     if (mousePressed && !mousePressedLastFrame)
     {
         if (CheckCollisionPointRec(mousePoint, playRec))
-            currentScreen = GameScreen::GAMEPLAY;
+        {
+            PlaySound(clickSound);
+            RestartGame();
+        }
         else if (CheckCollisionPointRec(mousePoint, howToRec))
+        {
+            PlaySound(clickSound);
             currentScreen = GameScreen::HOWTO;
+        }
         else if (CheckCollisionPointRec(mousePoint, creditsRec))
+        {
+            PlaySound(clickSound);
             currentScreen = GameScreen::CREDITS;
+        }
         else if (CheckCollisionPointRec(mousePoint, exitRec))
+        {
+             PlaySound(clickSound);
             currentScreen = GameScreen::EXIT;
+        }
     }
 
     mousePressedLastFrame = mousePressed;

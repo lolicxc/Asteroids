@@ -26,7 +26,6 @@ void UpdateHowScreen()
     howMousePoint = GetMousePosition();
     bool mousePressed = IsMouseButtonDown(MOUSE_LEFT_BUTTON);
 
-    // clic en botón ? volver al menú
     if (mousePressed && !howMousePressedLastFrame &&
         CheckCollisionPointRec(howMousePoint, backRec))
     {

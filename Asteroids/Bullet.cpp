@@ -1,6 +1,7 @@
 #include "Bullet.h"
 #include "cmath"
 #include "Asteroids.h"
+#include "Audio.h"
 
 Bullet bullets[MAX_BULLETS];
 extern Player player;
@@ -18,13 +19,8 @@ void InitBullet()
 
 void UpdateBullet()
 {
-	Vector2 punta =
-	{
-	player.position.x + cos(player.rotation * DEG2RAD) * (player.texture.height / 2.0f),
-	player.position.y + sin(player.rotation * DEG2RAD) * (player.texture.height / 2.0f)
-	};
+	Vector2 punta ={ player.position.x + cos(player.rotation * DEG2RAD) * (player.texture.height / 2.0f), player.position.y + sin(player.rotation * DEG2RAD) * (player.texture.height / 2.0f)};
 
-	// Disparo con espacio (o el botón que elijas)
 	if (IsMouseButtonPressed(MOUSE_RIGHT_BUTTON))
 	{
 		for (int i = 0; i < MAX_BULLETS; i++)
@@ -34,7 +30,8 @@ void UpdateBullet()
 				bullets[i].isActive = true;
 				bullets[i].bulletPos = punta;
 				bullets[i].direction = { cos(player.rotation * DEG2RAD), sin(player.rotation * DEG2RAD) };
-				break; // usar solo una bala por frame
+				PlaySound(shootSound);
+				break; 
 			}
 		}
 	}

@@ -1,14 +1,17 @@
 #pragma once
 
-// Enumeración de todas las pantallas del juego
+
 enum class GameScreen
 {
     MENU,
     GAMEPLAY,
+    PAUSE,
     HOWTO,
     CREDITS,
+    GAMEOVER,
     EXIT
 };
 
-// Variable global para saber en qué pantalla estamos
+
 extern GameScreen currentScreen;
+extern bool isPaused;

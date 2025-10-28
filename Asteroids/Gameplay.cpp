@@ -5,15 +5,15 @@
 #include "Asteroids.h"
 #include "Utils.h"
 #include "MainMenu.h"
+#include "PauseScreen.h"
+#include "Screens.h"
 
 Texture2D backgroundText;
 extern Player player;
 
 Texture2D buttonPause;
-
 Rectangle pauseRec;
 
-bool isPaused = false;
 extern Player player;
 
 void InitGame()
@@ -26,8 +26,7 @@ void InitGame()
     buttonPause = LoadTexture("../res/buttoonPause.png");
 
 
-    // ?? posición del botón (arriba a la derecha)
-    pauseRec = { screenWidth - buttonPause.width - 60.0f, 20.0f, (float)buttonPause.width, (float)buttonPause.height };
+    pauseRec = { screenWidth - buttonPause.width - 130.0f, 670.0f, (float)buttonPause.width, (float)buttonPause.height };
 }
 
 void UpdateGame()
@@ -35,12 +34,16 @@ void UpdateGame()
     mousePoint = GetMousePosition();
     bool mousePressed = IsMouseButtonDown(MOUSE_LEFT_BUTTON);
 
-    // Detectar clic solo cuando se presiona una vez
     if (mousePressed && !mousePressedLastFrame)
     {
         if (CheckCollisionPointRec(mousePoint, pauseRec))
         {
             isPaused = !isPaused;
+            if (isPaused)
+            {
+                InitPauseScreen();
+            }
+        
         }
     }
 
@@ -48,9 +51,17 @@ void UpdateGame()
 
     if (!isPaused)
     {
+
         UpdatePlayer();
         UpdateBullet();
         UpdateAsteroids();
+    }
+    else
+    {
+        UpdatePauseScreen();
+        extern GameScreen currentScreen;
+        if (currentScreen != GameScreen::GAMEPLAY)
+            return;
     }
 }
 
@@ -63,15 +74,15 @@ void DrawGame()
     DrawPlayer();
     DrawScore();
     DrawTimer();
+ /*   DrawAsteroidBoundingCircle();*/
+    DrawLives();
   
-    // ?? Dibuja el botón con efecto hover
     Color hover = { 255, 255, 255, 200 };
     DrawTexture(buttonPause, pauseRec.x, pauseRec.y, CheckCollisionPointRec(mousePoint, pauseRec) ? hover : WHITE);
 
-    // ?? Si el juego está pausado, mostrar capa y texto
     if (isPaused)
     {
-        DrawRectangle(0, 0, screenWidth, screenHeight, Fade(BLACK, 0.5f));
-        DrawText("PAUSADO", screenWidth / 2 - 100, screenHeight / 2, 40, WHITE);
+        DrawPauseScreen();
     }
 }
+

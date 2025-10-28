@@ -1,5 +1,6 @@
 #include "Utils.h"
 #include <cmath>
+#include "Screens.h"
 
 Font font;
 float gameTime = 0.0f;
@@ -10,7 +11,7 @@ void LoadGameFont()
     font = LoadFont("../res/CourierPrime-Regular.ttf");
 }
 
-bool CheckCollisionCircleCustom(Vector2 center1, float radius1, Vector2 center2, float radius2)
+bool CollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)
 {
     float dx = center1.x - center2.x;
     float dy = center1.y - center2.y;
@@ -22,7 +23,10 @@ bool CheckCollisionCircleCustom(Vector2 center1, float radius1, Vector2 center2,
 
 void UpdateTimer()
 {
+    if (!isPaused)
+    {
     gameTime += GetFrameTime(); 
+    }
 }
 
 void ResetTimer()
@@ -32,7 +36,7 @@ void ResetTimer()
 
 void DrawTimer()
 {
-    DrawTextEx(font, TextFormat("Tiempo: %.2f", gameTime), { 220, 700 }, 34, 2, ORANGE);
+    DrawTextEx(font, TextFormat("Time: %.2f", gameTime), { 220, 700 }, 34, 2, ORANGE);
 
 }
 

@@ -1,6 +1,10 @@
-﻿  GameLoop.cpp
-  Gameplay.cpp
-C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\Gameplay.cpp(69,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\Gameplay.cpp(69,38): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
+﻿  CreditsScreen.cpp
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(79,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(79,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(80,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(80,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(81,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(81,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(82,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuario\source\repos\Asteroids_Caparroz\Asteroids\CreditsScreen.cpp(82,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   Asteroids.vcxproj -> C:\Users\usuario\source\repos\Asteroids_Caparroz\x64\Debug\Asteroids.exe

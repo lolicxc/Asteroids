@@ -134,23 +134,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Asteroids.h" />
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="CreditsScreen.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="GameOverScreen.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="HowPlayScreen.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="PauseScreen.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Screens.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Asteroids.cpp" />
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="CreditsScreen.cpp" />
     <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="GameOverScreen.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="HowPlayScreen.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="PauseScreen.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screens.cpp" />
     <ClCompile Include="Utils.cpp" />

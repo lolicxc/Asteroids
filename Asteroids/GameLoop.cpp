@@ -1,27 +1,75 @@
 #include "GameLoop.h"
 #include "raylib.h"
-#include "Utils.h"
+#include "Screens.h"
 #include "MainMenu.h"
 #include "Gameplay.h"
-#include "screens.h"
+#include "PauseScreen.h"
+#include "Utils.h"
 #include "HowPlayScreen.h"
+#include "Audio.h"
+#include "GameOverScreen.h"
+#include "CreditsScreen.h"
+
 
 void RunGame()
 {
 	InitWindow(screenWidth, screenHeight, "Asteroids");
+	InitAudioDevice();
 	SetTargetFPS(60);
 
 	InitMainMenu();
+	InitGame();
+	InitPauseScreen();
+	InitHowScreen();
+	InitGameOverScreen();
+	InitAudio();
+	InitCreditsScreen();
 
-	bool gameplayInitialized = false;
-	bool howScreenInitialized = false;  
-	bool isPaused = false;
+	GameScreen lastScreen = GameScreen::EXIT;
 
 	while (!WindowShouldClose())
 	{
 		UpdateTimer();
+
+		static bool menuPlaying = false;
+		static bool gameplayPlaying = false;
+
+		if (currentScreen != lastScreen)
+		{
+			// Detener todo
+			StopMusicStream(mainMenuMusic);
+			StopMusicStream(gameMusicMusic);
+			menuPlaying = false;
+			gameplayPlaying = false;
+
+			lastScreen = currentScreen;
+		}
+
+		// reproducir según pantalla
+		switch (currentScreen)
+		{
+		case GameScreen::MENU:
+			if (!menuPlaying)
+			{
+				PlayMusicStream(mainMenuMusic); // empieza a sonar en loop automático
+				menuPlaying = true;
+			}
+			break;
+
+		case GameScreen::GAMEPLAY:
+			if (!gameplayPlaying)
+			{
+				PlayMusicStream(gameMusicMusic);
+				gameplayPlaying = true;
+			}
+			break;
+		}
+
+		
+		if (menuPlaying) UpdateMusicStream(mainMenuMusic);
+		if (gameplayPlaying) UpdateMusicStream(gameMusicMusic);
+
 		BeginDrawing();
-		ClearBackground(BLACK);
 
 		switch (currentScreen)
 		{
@@ -31,47 +79,29 @@ void RunGame()
 			break;
 
 		case GameScreen::GAMEPLAY:
-			if (!gameplayInitialized)
+			if (isPaused)
 			{
-				InitGame();
-				gameplayInitialized = true;
+				UpdatePauseScreen();
+				DrawPauseScreen();
 			}
-
-			UpdateGame();
-			DrawGame();
-
-			if (IsKeyPressed(KEY_Z))
+			else
 			{
-				currentScreen = GameScreen::MENU;
-				gameplayInitialized = false;
+				UpdateGame();
+				DrawGame();
 			}
 			break;
-
 		case GameScreen::HOWTO:
-
-			if (!howScreenInitialized)
-			{
-				InitHowScreen();
-				howScreenInitialized = true;
-			}
-
-			UpdateHowScreen();
+			UpdateHowScreen(); 
 			DrawHowScreen();
-
-			if (IsKeyPressed(KEY_Z))
-			{
-				currentScreen = GameScreen::MENU;
-				howScreenInitialized = false; // reinicia para la próxima vez
-			}
 			break;
-
 		case GameScreen::CREDITS:
-			// cuando tengas pantalla CREDITS
-			// UpdateCreditsScreen();
-			// DrawCreditsScreen();
-			if (IsKeyPressed(KEY_Z)) currentScreen = GameScreen::MENU;
+			UpdateCreditsScreen();
+			DrawCreditsScreen();
 			break;
-
+		case GameScreen::GAMEOVER:
+			UpdateGameOverScreen();
+			DrawGameOverScreen();
+			break;
 		case GameScreen::EXIT:
 			CloseWindow();
 			return;
@@ -79,6 +109,6 @@ void RunGame()
 
 		EndDrawing();
 	}
-
+	CloseAudioDevice();
 	CloseWindow();
 }
