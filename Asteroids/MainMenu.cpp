@@ -23,11 +23,11 @@ void InitMainMenu()
 {
  
     //imagenes
-    background = LoadTexture("../res/background.png");
-    buttonPlay = LoadTexture("../res/buttonPlay.png");
-    buttonHowTo = LoadTexture("../res/buttonHow.png");
-    buttonCredits = LoadTexture("../res/buttonCredits.png");
-    buttonExit = LoadTexture("../res/buttonQuit.png");
+    background = LoadTexture("res/background.png");
+    buttonPlay = LoadTexture("res/buttonPlay.png");
+    buttonHowTo = LoadTexture("res/buttonHow.png");
+    buttonCredits = LoadTexture("res/buttonCredits.png");
+    buttonExit = LoadTexture("res/buttonQuit.png");
 
     float centerX = screenWidth / 4.0f;
     float startY = 350.0f;

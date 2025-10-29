@@ -1,6 +1,6 @@
 #include "CreditsScreen.h"
-#include "screens.h"   // para usar currentScreen
-#include "Utils.h"     // por screenWidth y screenHeight
+#include "screens.h"  
+#include "Utils.h"    
 
 Texture2D creditsBackground;
 Texture2D bBack;
@@ -19,12 +19,12 @@ bool creditsMousePressedLastFrame = false;
 
 void InitCreditsScreen()
 {
-	creditsBackground = LoadTexture("../res/CreditsScreen.png");
-	bBack = LoadTexture("../res/buttonBack.png");     
+	creditsBackground = LoadTexture("res/CreditsScreen.png");
+	bBack = LoadTexture("res/buttonBack.png");     
 
-	button1Tex = LoadTexture("../res/itchioLink.png");
-	button2Tex = LoadTexture("../res/artStationLink.png");
-	button3Tex = LoadTexture("../res/musicLink.png");
+	button1Tex = LoadTexture("res/itchioLink.png");
+	button2Tex = LoadTexture("res/artStationLink.png");
+	button3Tex = LoadTexture("res/musicLink.png");
 
 	float centerX = screenWidth / 2.0f - 20;
 	float startY = 290.0f;

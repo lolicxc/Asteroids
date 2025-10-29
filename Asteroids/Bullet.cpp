@@ -9,7 +9,7 @@ Texture2D bulletTexture;
 
 void InitBullet()
 {
-	bulletTexture = LoadTexture("../res/bullet.png"); // ejemplo
+	bulletTexture = LoadTexture("res/bullet.png"); // ejemplo
 	for (int i = 0; i < MAX_BULLETS; i++)
 	{
 		bullets[i].isActive = false;

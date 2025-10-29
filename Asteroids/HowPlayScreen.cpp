@@ -12,10 +12,10 @@ bool howMousePressedLastFrame = false;
 
 void InitHowScreen()
 {
-    howBackground = LoadTexture("../res/HTPScreen.png"); // ??? imagen de fondo
-    buttonBack = LoadTexture("../res/buttonBack.png");      // ?? botón de volver
+    howBackground = LoadTexture("res/HTPScreen.png"); // ??? imagen de fondo
+    buttonBack = LoadTexture("res/buttonBack.png");      // ?? botón de volver
 
-    // centramos el botón abajo
+
     float buttonX = (screenWidth - buttonBack.width) / 2.0f;
     float buttonY = screenHeight - buttonBack.height - 50.0f;
     backRec = { buttonX, buttonY, (float)buttonBack.width, (float)buttonBack.height };

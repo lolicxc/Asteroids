@@ -8,7 +8,7 @@ float gameTime = 0.0f;
 
 void LoadGameFont()
 {
-    font = LoadFont("../res/CourierPrime-Regular.ttf");
+    font = LoadFont("res/CourierPrime-Regular.ttf");
 }
 
 bool CollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)

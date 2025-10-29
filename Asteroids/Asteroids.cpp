@@ -26,9 +26,9 @@ static Vector2 RandomVelocity(float speed)
 void InitAsteroids()
 {
    
-    asteroidBigTex = LoadTexture("../res/asteroidBig.png");
-    asteroidMedTex = LoadTexture("../res/asteroidMedium.png");
-    asteroidSmallTex = LoadTexture("../res/asteroidSmall.png");
+    asteroidBigTex = LoadTexture("res/asteroidBig.png");
+    asteroidMedTex = LoadTexture("res/asteroidMedium.png");
+    asteroidSmallTex = LoadTexture("res/asteroidSmall.png");
 
    
     for (int i = 0; i < MAX_ASTEROIDS; i++)

@@ -12,10 +12,10 @@ void InitPlayer()
     player.acceleration = { 0, 0 };
     player.speed = 100.0f;
     player.rotation = 0.0f;
-    player.texture = LoadTexture("../res/animationExplo.png");
+    player.texture = LoadTexture("res/animationExplo.png");
 
     player.lives = 5; 
-    player.livesText = LoadTexture("../res/life.png"); 
+    player.livesText = LoadTexture("res/life.png"); 
     player.isDead = false;
 
    

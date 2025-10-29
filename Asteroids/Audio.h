@@ -9,6 +9,6 @@ extern Sound shipSound;
 extern Sound explotion;
 extern Sound asteroidExpo;
 
-void InitAudio();   // Para cargar todos los sonidos
-void UnloadAudio(); // Para liberar sonidos al cerrar
+void InitAudio();  
+void UnloadAudio(); 
 

@@ -19,9 +19,9 @@ Rectangle mainmenuRec;
 
 void InitGameOverScreen()
 {
-    popUpGameOver = LoadTexture("../res/GameOverPopUp.png");
-    buttonPlayAgain = LoadTexture("../res/buttonPlayagain.png");
-    buttonMain = LoadTexture("../res/buttonMain.png");
+    popUpGameOver = LoadTexture("res/GameOverPopUp.png");
+    buttonPlayAgain = LoadTexture("res/buttonPlayagain.png");
+    buttonMain = LoadTexture("res/buttonMain.png");
  
 
     float centerX = screenWidth / 2.0f;

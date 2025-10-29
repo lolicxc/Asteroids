@@ -22,8 +22,8 @@ void InitGame()
     InitPlayer();
     InitBullet();
     InitAsteroids();
-    backgroundText = LoadTexture("../res/gameplayText.png");
-    buttonPause = LoadTexture("../res/buttoonPause.png");
+    backgroundText = LoadTexture("res/gameplayText.png");
+    buttonPause = LoadTexture("res/buttoonPause.png");
 
 
     pauseRec = { screenWidth - buttonPause.width - 130.0f, 670.0f, (float)buttonPause.width, (float)buttonPause.height };

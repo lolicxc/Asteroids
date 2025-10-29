@@ -10,13 +10,13 @@ Sound asteroidExpo;
 
 void InitAudio()
 {
-    mainMenuMusic = LoadMusicStream("../res/mainmenu.wav");
-    gameMusicMusic = LoadMusicStream("../res/gameplay.wav");
-    shootSound = LoadSound("../res/shoot.wav");
-    clickSound = LoadSound("../res/hover.wav");
-    shipSound = LoadSound("../res/shipSound.wav");
-    explotion = LoadSound("../res/explotion.wav");
-    asteroidExpo = LoadSound("../res/asteroidExplotion.wav");
+    mainMenuMusic = LoadMusicStream("res/mainmenu.wav");
+    gameMusicMusic = LoadMusicStream("res/gameplay.wav");
+    shootSound = LoadSound("res/shoot.wav");
+    clickSound = LoadSound("res/hover.wav");
+    shipSound = LoadSound("res/shipSound.wav");
+    explotion = LoadSound("res/explotion.wav");
+    asteroidExpo = LoadSound("res/asteroidExplotion.wav");
 }
 
 void UnloadAudio()

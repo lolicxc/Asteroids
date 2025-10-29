@@ -36,7 +36,7 @@ void RunGame()
 
 		if (currentScreen != lastScreen)
 		{
-			// Detener todo
+			
 			StopMusicStream(mainMenuMusic);
 			StopMusicStream(gameMusicMusic);
 			menuPlaying = false;
@@ -45,13 +45,15 @@ void RunGame()
 			lastScreen = currentScreen;
 		}
 
-		// reproducir según pantalla
+		// reproducir segun pantalla
 		switch (currentScreen)
 		{
+		case GameScreen::HOWTO:
+		case GameScreen::CREDITS:
 		case GameScreen::MENU:
 			if (!menuPlaying)
 			{
-				PlayMusicStream(mainMenuMusic); // empieza a sonar en loop automático
+				PlayMusicStream(mainMenuMusic); 
 				menuPlaying = true;
 			}
 			break;

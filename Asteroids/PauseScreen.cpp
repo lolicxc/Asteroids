@@ -18,10 +18,10 @@ Rectangle exitGameRec;
 
 void InitPauseScreen()
 {
-    popUp = LoadTexture("../res/PausePopUp.png");
-    buttonResume = LoadTexture("../res/buttonResume.png");
-    buttonMainMenu = LoadTexture("../res/buttonMain.png");
-    buttonExitGame = LoadTexture("../res/buttonExit.png");
+    popUp = LoadTexture("res/PausePopUp.png");
+    buttonResume = LoadTexture("res/buttonResume.png");
+    buttonMainMenu = LoadTexture("res/buttonMain.png");
+    buttonExitGame = LoadTexture("res/buttonExit.png");
 
     float centerX = screenWidth / 2.0f;
     float startY = 350.0f;
